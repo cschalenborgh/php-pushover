@@ -1,5 +1,15 @@
 <?php
-// https://pushover.net/api
+/**
+ * php-pushover
+ *
+ * PHP service wrapper for the pushover.net API: https://pushover.net/api
+ * 
+ * @author Chris Schalenborgh <chris.s@kryap.com>
+ * @version 0.1
+ * @package php-pushover	
+ * @example test.php
+ */ 
+ 
 class Pushover
 {
 	private $_api_key_app;

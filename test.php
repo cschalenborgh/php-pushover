@@ -1,4 +1,9 @@
 <?php
+/**
+ * @author Chris Schalenborgh <chris.s@kryap.com>
+ * @version 0.1
+ */ 
+ 
 include('Pushover.php');
 
 $push = new Pushover();
