@@ -7,8 +7,8 @@
 include('Pushover.php');
 
 $push = new Pushover();
-$push->setApiKeyApp('app api key goes here');
-$push->setApiKeyUser('user api key goes here');
+$push->setToken('app token goes here');
+$push->setUser('user token goes here');
 
 $push->setTitle('Hey Chris');
 $push->setMessage('Hello world! ' .time());

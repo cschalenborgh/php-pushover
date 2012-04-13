@@ -1,7 +1,7 @@
-setApiKeyApp
+setToken
 Your app API key.
 
-setApiKeyUser
+setUser
 The user's API key.
 
 setTitle

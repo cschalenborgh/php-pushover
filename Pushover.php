@@ -12,8 +12,8 @@
  
 class Pushover
 {
-	private $_api_key_app;
-	private $_api_key_user;
+	private $_token;
+	private $_user;
 	private $_debug = false;
 	
 	private $_title;
@@ -24,28 +24,28 @@ class Pushover
 	private $_url;
 	private $_url_title;
 	
-	public function __construct ($api_key_app = null, $api_key_user = null, $title = null, $message = null) {		
-		if(isset($api_key_app))	$this->setApiKeyApp($api_key_app);
-		if(isset($api_key_user)) $this->setApiKeyUser($api_key_user);
+	public function __construct ($token = null, $user = null, $title = null, $message = null) {		
+		if(isset($token))	$this->setToken($token);
+		if(isset($user)) $this->setuser($user);
 		if(isset($title))	$this->setTitle($title);
 		if(isset($message))	$this->setMessage($message);
     }
 
 	// getters and setters
-    public function setApiKeyApp ($key) {
-        $this->_api_key_app = $key;
+    public function setToken ($token) {
+        $this->_token = $token;
     }
 
-    public function getApiKeyApp () {
-        return $this->_api_key_app;
+    public function getToken () {
+        return $this->_token;
     }
 
-    public function setApiKeyUser ($key) {
-        $this->_api_key_user = $key;
+    public function setUser ($user) {
+        $this->_user = $user;
     }
 
-    public function getApiKeyUser () {
-        return $this->_api_key_user;
+    public function getUser () {
+        return $this->_user;
     }
 
     public function setTitle ($title) {
@@ -114,7 +114,7 @@ class Pushover
 	
 	
 	public function send() {
-		if(!Empty($this->_api_key_app) && !Empty($this->_api_key_user) && !Empty($this->_message)) {
+		if(!Empty($this->_token) && !Empty($this->_user) && !Empty($this->_message)) {
 			if(!isset($this->_timestamp)) $this->setTimestamp(time());
 			
 			$c = curl_init();
@@ -123,8 +123,8 @@ class Pushover
 			curl_setopt($c, CURLOPT_SSL_VERIFYPEER, false);
 			curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($c, CURLOPT_POSTFIELDS, array(
-			  	'token' => $this->getApiKeyApp(),
-			  	'user' => $this->getApiKeyUser(),
+			  	'token' => $this->getToken(),
+			  	'user' => $this->getUser(),
 			  	'title' => $this->getTitle(),
 			  	'message' => $this->getMessage(),
 			  	'device' => $this->getDevice(),
