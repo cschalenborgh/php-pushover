@@ -120,7 +120,7 @@ class Pushover
 			$c = curl_init();
 			curl_setopt($c, CURLOPT_URL, 'https://api.pushover.net/1/messages.xml');
 			curl_setopt($c, CURLOPT_HEADER, false);
-			curl_setopt($c, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($c, CURLOPT_SSL_VERIFYPEER, true);
 			curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($c, CURLOPT_POSTFIELDS, array(
 			  	'token' => $this->getToken(),
