@@ -104,7 +104,6 @@ class Pushover
 	
 	
 	public function send() {
-		// send message if all is nog empty
 		if(!Empty($this->_api_key_app) && !Empty($this->_api_key_user) && !Empty($this->_message)) {
 			if(!isset($this->_timestamp)) $this->setTimestamp(time());
 			
