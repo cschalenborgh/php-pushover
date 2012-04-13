@@ -2,13 +2,13 @@
 include('Pushover.php');
 
 $push = new Pushover();
-$push->setApiKeyApp();
-$push->setApiKeyUser();
+$push->setApiKeyApp('app api key goes here');
+$push->setApiKeyUser('user api key goes here');
 
 $push->setTitle('Hey Chris');
 $push->setMessage('Hello world! ' .time());
-$push->setUrl('https://www.pushover.net');
-$push->setUrlTitle('click here');
+$push->setUrl('http://chris.schalenborgh.be/blog/');
+$push->setUrlTitle('cool php blog');
 
 $push->setDevice('iPhone');
 $push->setPriority(1);
