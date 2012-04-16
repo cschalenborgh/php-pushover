@@ -4,6 +4,7 @@
 ## About
 > php-pushover class is a PHP wrapper class for using this Pushover (https://pushover.net) REST API
 
+## Methods
 
 # setToken
 > Your app API key.
