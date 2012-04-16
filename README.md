@@ -1,8 +1,8 @@
-## php-pushover class
+## About
 > Pushover is the ideal application for sending (free) push notifications to iOS and Android devices, using this very simple API.
 
-## About
-> php-pushover class is a PHP wrapper class for using the Pushover (https://pushover.net) REST API. Have a look at their well documented API (https://pushover.net/api) docs for more information about all the parameters.
+## php-pushover class
+> php-pushover class is a PHP wrapper class for using the Pushover (https://pushover.net) REST API. Have a look at their API docs (https://pushover.net/api) for more information about all the parameters.
 
 ## Methods
 
