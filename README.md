@@ -6,16 +6,16 @@
 
 ## Methods
 
-# setToken
+* setToken
 > Your app API key.
 
-# setUser
+* setUser
 > The user's API key.
 
-# setTitle
+* setTitle
 > Set title of push notification.
 
-# setMessage
+* setMessage
 > Set message of push notification.
 
 # setUrl
