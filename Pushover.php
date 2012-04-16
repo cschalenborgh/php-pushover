@@ -9,10 +9,14 @@
  * @package php-pushover	
  * @example test.php
  * @link https://pushover.net/api
+ * @license BSD License
  */ 
  
 class Pushover
 {
+	// api url
+	const API_URL = 'https://api.pushover.net/1/messages.xml';
+	
 	/**
 	 * Application API token
 	 *
@@ -70,14 +74,14 @@ class Pushover
 	private $_priority = 0;
 	
 	/**
-	 * Include a Supplementary URL
+	 * Include a Supplementary URL (up to 200 characters)
 	 *
 	 * @var string
 	 */
 	private $_url;
 	
 	/**
-	 * Title of the included URL
+	 * Title of the included URL (up to 50 characters)
 	 *
 	 * @var string
 	 */
@@ -98,7 +102,7 @@ class Pushover
 	 * @param string $token
 	 */
     public function setToken ($token) {
-        $this->_token = $token;
+        $this->_token = (string)$token;
     }
 
 	/**
@@ -116,7 +120,7 @@ class Pushover
 	 * @param string $user
 	 */
     public function setUser ($user) {
-        $this->_user = $user;
+        $this->_user = (string)$user;
     }
 
 	/**
@@ -134,7 +138,7 @@ class Pushover
 	 * @param string $title
 	 */
     public function setTitle ($title) {
-        $this->_title = $title;
+        $this->_title = (string)$title;
     }
 
 	/**
@@ -152,7 +156,7 @@ class Pushover
 	 * @param string $title
 	 */
     public function setMessage ($msg) {
-        $this->_message = $msg;
+        $this->_message = (string)$msg;
     }
 
 	/**
@@ -170,7 +174,7 @@ class Pushover
 	 * @param string $device
 	 */
     public function setDevice ($device) {
-        $this->_device = $device;
+        $this->_device = (string)$device;
     }
 
 	/**
@@ -188,7 +192,7 @@ class Pushover
 	 * @param int $time
 	 */
     public function setTimestamp ($time) {
-        $this->_timestamp = $time;
+        $this->_timestamp = (int)$time;
     }
 
 	/**
@@ -206,7 +210,7 @@ class Pushover
 	 * @param int $priority
 	 */
     public function setPriority ($priority) {
-        $this->_priority = $priority;
+        $this->_priority = (int)$priority;
     }
 
 	/**
@@ -224,7 +228,7 @@ class Pushover
 	 * @param string $url
 	 */
     public function setUrl ($url) {
-        $this->_url = $url;
+        $this->_url = (string)$url;
     }
 
 	/**
@@ -242,7 +246,7 @@ class Pushover
 	 * @param string $url_title
 	 */
     public function setUrlTitle ($url_title) {
-        $this->_url_title = $url_title;
+        $this->_url_title = (string)$url_title;
     }
 
 	/**
@@ -260,7 +264,7 @@ class Pushover
 	 * @param bool $debug
 	 */
     public function setDebug ($debug) {
-        $this->_debug = $debug;
+        $this->_debug = (boolean)$debug;
     }
 
 	/**
@@ -282,7 +286,7 @@ class Pushover
 			if(!isset($this->_timestamp)) $this->setTimestamp(time());
 			
 			$c = curl_init();
-			curl_setopt($c, CURLOPT_URL, 'https://api.pushover.net/1/messages.xml');
+			curl_setopt($c, CURLOPT_URL, self::API_URL);
 			curl_setopt($c, CURLOPT_HEADER, false);
 			curl_setopt($c, CURLOPT_SSL_VERIFYPEER, false);
 			curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
@@ -296,7 +300,7 @@ class Pushover
 			  	'timestamp' => $this->getTimestamp(),
 			  	'url' => $this->getUrl(),
 			  	'url_title' => $this->getUrlTitle()
-			));
+			));			
 			
 			$response = curl_exec($c);
 			$xml = simplexml_load_string($response);
