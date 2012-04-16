@@ -1,10 +1,9 @@
-# php-pushover class
+## php-pushover class
 > PHP service wrapper for the pushover.net API: https://pushover.net/api . Have a look at their well documented API docs for more information about all the parameters.
 
-# About
+## About
 > php-pushover class is a PHP wrapper class for using this Pushover (https://pushover.net) REST API
 
-# License
 
 # setToken
 > Your app API key.
