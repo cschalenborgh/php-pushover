@@ -288,6 +288,10 @@ class Pushover
 			$c = curl_init();
 			curl_setopt($c, CURLOPT_URL, self::API_URL);
 			curl_setopt($c, CURLOPT_HEADER, false);
+			/*
+			if possible, set CURLOPT_SSL_VERIFYPEER to true..
+			- http://www.tehuber.com/phps/cabundlegen.phps 
+			*/
 			curl_setopt($c, CURLOPT_SSL_VERIFYPEER, false);
 			curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($c, CURLOPT_POSTFIELDS, array(
