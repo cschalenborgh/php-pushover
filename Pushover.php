@@ -99,7 +99,9 @@ class Pushover
 	/**
 	 * Set API token
 	 * 
-	 * @param string $token
+	 * @param string $token Your app API key.
+	 *
+	 * @return void
 	 */
     public function setToken ($token) {
         $this->_token = (string)$token;
@@ -117,7 +119,9 @@ class Pushover
 	/**
 	 * Set API user
 	 * 
-	 * @param string $user
+	 * @param string $user The user's API key.
+	 *
+	 * @return void
 	 */
     public function setUser ($user) {
         $this->_user = (string)$user;
@@ -135,7 +139,9 @@ class Pushover
 	/**
 	 * Set message title
 	 * 
-	 * @param string $title
+	 * @param string $title Title of push notification.
+	 *
+	 * @return void
 	 */
     public function setTitle ($title) {
         $this->_title = (string)$title;
@@ -153,7 +159,9 @@ class Pushover
 	/**
 	 * Set message
 	 * 
-	 * @param string $title
+	 * @param string $msg Message of push notification.
+	 *
+	 * @return void
 	 */
     public function setMessage ($msg) {
         $this->_message = (string)$msg;
@@ -171,7 +179,9 @@ class Pushover
 	/**
 	 * Set device
 	 * 
-	 * @param string $device
+	 * @param string $device Leave this empty if you want to send to all user's devices. This can be user specific!
+	 *
+	 * @return void
 	 */
     public function setDevice ($device) {
         $this->_device = (string)$device;
@@ -188,8 +198,12 @@ class Pushover
 
 	/**
 	 * Set timestamp
+	 *
+	 * Messages are stored on the Pushover servers with a timestamp of when they were initially received through the API. This timestamp is sent to and shown on client devices, and messages are listed in order of these timestamps. In most cases, this default timestamp is acceptable. This is not for scheduling!
 	 * 
-	 * @param int $time
+	 * @param int $time dispaly time on device
+	 *
+	 * @return void
 	 */
     public function setTimestamp ($time) {
         $this->_timestamp = (int)$time;
@@ -205,9 +219,15 @@ class Pushover
     }
 
 	/**
-	 * Set priority (0 or 1)
+	 * Set priority (-1, 0 or 1)
+	 *
+	 * -1 Low priority notifications.
+	 * 0  Default.
+	 * 1 triggers a high-priority alert that always generates sound and vibration.
 	 * 
-	 * @param int $priority
+	 * @param int $priority priority level.
+	 *
+	 * @return void
 	 */
     public function setPriority ($priority) {
         $this->_priority = (int)$priority;
@@ -225,7 +245,9 @@ class Pushover
 	/**
 	 * Set url
 	 * 
-	 * @param string $url
+	 * @param string $url Add an url to your notification.
+	 *
+	 * @return void
 	 */
     public function setUrl ($url) {
         $this->_url = (string)$url;
@@ -243,7 +265,9 @@ class Pushover
 	/**
 	 * Set url title
 	 * 
-	 * @param string $url_title
+	 * @param string $url_title A title if you want to show a text instead of the actual url.
+	 *
+	 * @return void
 	 */
     public function setUrlTitle ($url_title) {
         $this->_url_title = (string)$url_title;
@@ -261,7 +285,9 @@ class Pushover
 	/**
 	 * Set debug mode
 	 * 
-	 * @param bool $debug
+	 * @param bool $debug Enable this to receive detailed input and output info.
+	 *
+	 * @return void
 	 */
     public function setDebug ($debug) {
         $this->_debug = (boolean)$debug;
