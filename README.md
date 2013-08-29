@@ -28,7 +28,13 @@
 > Leave this empty if you want to send to all user's devices. This can be user specific!
 
 * setPriority
-> Default = 0, if 1 the user's quiet hours will be ignored + messages displayed in red.
+> Default = 0, if 1 the user's quiet hours will be ignored + messages displayed in red. If 2, the same behaviour as 1 applies; but the message will repeat until the user acknowledges it.
+
+* setExpire
+> The expire parameter is only used when the Priority is set to 2 (or emergency-priority), and specifies how many seconds your notification will continue to be retried for. (Max Value = 86400)
+
+* setRetry
+> The Retry parameter is only used when the Priority is set to 2 (or emergency-priority), and specifies how often (in seconds) the Pushover servers will send the same notification to the user. (Min Value = 30)
 
 * setTimestamp
 > Messages are stored on the Pushover servers with a timestamp of when they were initially received through the API. This timestamp is sent to and shown on client devices, and messages are listed in order of these timestamps. In most cases, this default timestamp is acceptable. This is not for scheduling!

@@ -329,6 +329,9 @@ class Pushover
     public function getUrlTitle () {
         return $this->_url_title;
     }
+	
+	
+	
 
 	/**
 	 * Set debug mode
