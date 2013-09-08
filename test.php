@@ -21,6 +21,7 @@ $push->setRetry(60); //Used with Priority = 2; Pushover will resend the notifica
 $push->setExpire(3600); //Used with Priority = 2; Pushover will resend the notification every 60 seconds for 3600 seconds. After that point, it stops sending notifications.
 $push->setTimestamp(time());
 $push->setDebug(true);
+$push->setSound('bike');
 
 $go = $push->send();
 
