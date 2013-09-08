@@ -5,7 +5,7 @@
  * PHP service wrapper for the pushover.net API: https://pushover.net/api
  * 
  * @author Chris Schalenborgh <chris.s@kryap.com>
- * @version 0.1
+ * @version 0.2
  * @package php-pushover	
  * @example test.php
  * @link https://pushover.net/api
@@ -100,6 +100,13 @@ class Pushover
 	* @var int
 	*/
 	private $_expire;	
+	
+	/**
+	* The sound parameter. Get an up-to-date sound list from https://api.pushover.net/1/sounds.json?token=
+	* 
+	* @var int
+	*/
+	private $_sound;	
 
 	/**
 	 * Default constructor
@@ -353,6 +360,28 @@ class Pushover
         return $this->_debug;
     }
 	
+	
+
+	/**
+	 * Set sound
+	 * 
+	 * @param string $sound If no sound parameter is specified, the user's default tone will play. If the user has not chosen a custom sound, the standard Pushover sound will play.
+	 *
+	 * @return void
+	 */
+    public function setSound ($sound) {
+        $this->_sound = (string)$sound;
+    }
+
+	/**
+	 * Get sound
+	 * 
+	 * @return string
+	 */
+    public function getSound () {
+        return $this->_sound;
+    }
+	
 	/**
 	 * Send message to Pushover API
 	 * 
@@ -382,6 +411,7 @@ class Pushover
 				'expire' => $this->getExpire(),
 				'retry' => $this->getRetry(),
 			  	'url' => $this->getUrl(),
+			  	'sound' => $this->getSound(),
 			  	'url_title' => $this->getUrlTitle()
 			));	
 			$response = curl_exec($c);
