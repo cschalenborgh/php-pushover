@@ -42,5 +42,8 @@
 * setDebug
 > Enable this to receive detailed input and output info.
 
+* validateUser
+> Validates the user using the API
+
 * send
 > Send the message to the API
