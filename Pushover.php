@@ -16,6 +16,9 @@ class Pushover
 {
 	// api url
 	const API_URL = 'https://api.pushover.net/1/messages.xml';
+
+    //validation url
+    const VALIDATION_URL = 'https://api.pushover.net/1/users/validate.json';
 	
 	/**
 	 * Application API token
@@ -152,6 +155,29 @@ class Pushover
 	 */
     public function getUser () {
         return $this->_user;
+    }
+
+    /**
+     * Validate the user using Pushover API
+     *
+     * @return bool
+     */
+    public function validateUser() {
+        if(!Empty($this->_token)&&!Empty($this->_user)){
+            $c = curl_init();
+            curl_setopt($c,CURLOPT_URL,self::VALIDATION_URL);
+            curl_setopt($c, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($c, CURLOPT_POSTFIELDS,array(
+               "token" => $this->_token,
+               "user" => $this->_user
+            ));
+            $response = curl_exec($c);
+            $json = json_decode($response);
+            return $json->status == 1;
+        } else {
+            return null;
+        }
     }
 
 	/**
