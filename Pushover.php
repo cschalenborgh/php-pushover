@@ -281,7 +281,7 @@ class Pushover
 	 *
 	 * Messages are stored on the Pushover servers with a timestamp of when they were initially received through the API. This timestamp is sent to and shown on client devices, and messages are listed in order of these timestamps. In most cases, this default timestamp is acceptable. This is not for scheduling!
 	 * 
-	 * @param int $time dispaly time on device
+	 * @param int $time display time on device
 	 *
 	 * @return void
 	 */
@@ -449,7 +449,8 @@ class Pushover
 			else {
 				return ($xml->status == 1) ? true : false;
 			}
-		}
+		} else {
+            return null;
+        }
 	}
 }
-?>
