@@ -209,6 +209,15 @@ class Pushover
 		}
 
 	/**
+	 * Get Expire Time
+	 *
+	 * @return string
+	 */
+    public function getExpire () {
+        return $this->_expire;
+    }
+
+	/**
 	 * Set Callback URL
 	 *
 	 * @param string $callback a publically-accessible URL that Pushover sends a request to when the user has acknowledged your notification.
@@ -353,9 +362,6 @@ class Pushover
         return $this->_url_title;
     }
 
-
-
-
 	/**
 	 * Set debug mode
 	 *
@@ -375,8 +381,6 @@ class Pushover
     public function getDebug () {
         return $this->_debug;
     }
-
-
 
 	/**
 	 * Set sound
