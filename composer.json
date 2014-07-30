@@ -1,0 +1,8 @@
+{
+	"name": "php-pushover/php-pushover",
+	"type": "library",
+	"description": "PHP class for the Pushover.net project",
+	"autoload": {
+		"files": ["Pushover.php"]
+	}
+}
