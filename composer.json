@@ -2,6 +2,12 @@
 	"name": "php-pushover/php-pushover",
 	"type": "library",
 	"description": "PHP class for the Pushover.net project",
+    "authors": [
+        {
+            "name": "Chris Schalenborgh",
+            "email": "chris@schalenborgh.be"
+        }
+    ],
 	"autoload": {
 		"files": ["Pushover.php"]
 	}
