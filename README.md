@@ -36,6 +36,9 @@
 * setRetry
 > The Retry parameter is only used when the Priority is set to 2 (or emergency-priority), and specifies how often (in seconds) the Pushover servers will send the same notification to the user. (Min Value = 30)
 
+* setCallback
+> The callback parameter must be a URL (HTTP or HTTPS) that is reachable from the Internet that our servers will call out to as soon as the notification has been acknowledged.
+
 * setTimestamp
 > Messages are stored on the Pushover servers with a timestamp of when they were initially received through the API. This timestamp is sent to and shown on client devices, and messages are listed in order of these timestamps. In most cases, this default timestamp is acceptable. This is not for scheduling!
 
