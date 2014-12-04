@@ -18,6 +18,8 @@ class Pushover
 	const API_URL = 'https://api.pushover.net/1/messages.xml';
     //validation url
     const VALIDATION_URL = 'https://api.pushover.net/1/users/validate.json';
+    //sounds URL
+    const SOUNDS_URL = 'https://api.pushover.net/1/sounds.json?token=%s';
 
 	/**
 	 * Application API token
@@ -425,6 +427,22 @@ class Pushover
 	 */
     public function getSound () {
         return $this->_sound;
+    }
+
+    /**
+     * Gets an array of notification sounds that can be used with Pushover.
+     *
+     * @return array
+     */
+    public function getSoundsList() {
+        if(!empty($this->_token)){
+            $c = curl_init();
+            curl_setopt($c, CURLOPT_URL, sprintf(self::SOUNDS_URL,$this->_token));
+            curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($c);
+            return json_decode($response,true)['sounds'];
+        }
+        return null;
     }
 
 	/**

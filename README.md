@@ -24,6 +24,9 @@
 * setUrlTitle
 > Set a title if you want to show a text instead of the actual url.
 
+* setSound
+> Set the notification sound to be played. See Pushover API for options or use getSoundsList()
+
 * setDevice
 > Leave this empty if you want to send to all user's devices. This can be user specific!
 
@@ -47,6 +50,9 @@
 
 * validateUser
 > Validates the user using the API
+
+* getSoundsList
+> Gets an array of sounds that can be used with setSound()
 
 * send
 > Send the message to the API
