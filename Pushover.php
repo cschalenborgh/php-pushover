@@ -129,6 +129,13 @@ class Pushover
     private $_sound;
 
     /**
+     * The receipt parameter. The receipt of the last send message
+     *
+     * @var int
+     */
+    private $_receipt;
+
+    /**
      * Default constructor
      */
     public function __construct () {
@@ -419,6 +426,26 @@ class Pushover
     }
 
     /**
+     * Set receipt mode
+     *
+     * @param string $receipt Set receipt string
+     *
+     * @return void
+     */
+    public function setReceipt ($receipt) {
+        $this->_receipt = (string)$receipt;
+    }
+
+    /**
+     * Get last receipt
+     *
+     * @return string
+     */
+    public function getReceipt () {
+        return $this->_receipt;
+    }
+
+    /**
      * Set debug mode
      *
      * @param bool $debug Enable this to receive detailed input and output info.
@@ -511,6 +538,9 @@ class Pushover
             ));
             $response = curl_exec($c);
             $xml = simplexml_load_string($response);
+
+            # Store notification-receipt
+            $this->setReceipt( $xml->receipt );
 
             if($this->getDebug()) {
                 return array('output' => $xml, 'input' => $this);

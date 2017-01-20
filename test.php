@@ -26,7 +26,10 @@ $push->setSound('bike');
 
 $go = $push->send();
 
+$receipt = $push->getReceipt();
+
 echo '<pre>';
 print_r($go);
+print "Receipt: $receipt\n";
 echo '</pre>';
 ?>

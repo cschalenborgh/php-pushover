@@ -45,6 +45,9 @@
 * setTimestamp
 > Messages are stored on the Pushover servers with a timestamp of when they were initially received through the API. This timestamp is sent to and shown on client devices, and messages are listed in order of these timestamps. In most cases, this default timestamp is acceptable. This is not for scheduling!
 
+* getReceipt
+> Gets the pushover receipt identifier to be used in later calls to the receipt API.
+
 * setDebug
 > Enable this to receive detailed input and output info.
 
