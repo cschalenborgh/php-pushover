@@ -9,7 +9,7 @@
  * @package php-pushover
  * @example test.php
  * @link https://pushover.net/api
- * @license BSD License
+ * @license MIT License
  */
 
 class Pushover
