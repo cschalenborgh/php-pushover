@@ -150,6 +150,8 @@ class Pushover
      */
     public function setToken ($token) {
         $this->_token = (string)$token;
+
+        return $this;
     }
 
     /**
@@ -170,6 +172,8 @@ class Pushover
      */
     public function setUser ($user) {
         $this->_user = (string)$user;
+
+        return $this;
     }
 
     /**
@@ -213,6 +217,8 @@ class Pushover
      */
     public function setTitle ($title) {
         $this->_title = (string)$title;
+
+        return $this;
     }
 
     /**
@@ -233,6 +239,8 @@ class Pushover
      */
     public function setHtml ($html) {
         $this->_html = (int)$html;
+
+        return $this;
     }
 
     /**
@@ -251,6 +259,8 @@ class Pushover
      */
     public function setRetry ($retry) {
         $this->_retry = (int)$retry;
+
+        return $this;
     }
 
     /**
@@ -269,6 +279,8 @@ class Pushover
      */
     public function setExpire ($expire) {
         $this->_expire = (int)$expire;
+
+        return $this;
     }
 
     /**
@@ -287,6 +299,8 @@ class Pushover
      */
     public function setCallback ($callback) {
         $this->_callback = $callback;
+
+        return $this;
     }
 
     /**
@@ -307,6 +321,8 @@ class Pushover
      */
     public function setMessage ($msg) {
         $this->_message = (string)$msg;
+
+        return $this;
     }
 
     /**
@@ -327,6 +343,8 @@ class Pushover
      */
     public function setDevice ($device) {
         $this->_device = (string)$device;
+
+        return $this;
     }
 
     /**
@@ -349,6 +367,8 @@ class Pushover
      */
     public function setTimestamp ($time) {
         $this->_timestamp = (int)$time;
+
+        return $this;
     }
 
     /**
@@ -374,6 +394,8 @@ class Pushover
      */
     public function setPriority ($priority) {
         $this->_priority = (int)$priority;
+
+        return $this;
     }
 
     /**
@@ -394,6 +416,8 @@ class Pushover
      */
     public function setUrl ($url) {
         $this->_url = (string)$url;
+
+        return $this;
     }
 
     /**
@@ -414,6 +438,8 @@ class Pushover
      */
     public function setUrlTitle ($url_title) {
         $this->_url_title = (string)$url_title;
+
+        return $this;
     }
 
     /**
@@ -434,6 +460,8 @@ class Pushover
      */
     public function setReceipt ($receipt) {
         $this->_receipt = (string)$receipt;
+
+        return $this;
     }
 
     /**
@@ -454,6 +482,8 @@ class Pushover
      */
     public function setDebug ($debug) {
         $this->_debug = (boolean)$debug;
+
+        return $this;
     }
 
     /**
@@ -474,6 +504,8 @@ class Pushover
      */
     public function setSound ($sound) {
         $this->_sound = (string)$sound;
+
+        return $this;
     }
 
     /**
